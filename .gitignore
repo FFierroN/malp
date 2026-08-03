@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Entornos / secretos
+.env
+.env.*
+*.local
+
+# Base de datos local (¡nunca subir datos de clientes!)
+*.sqlite
+*.sqlite3
+*.db
+data/*.db
+
+# Node (por si el front usa build tools)
+node_modules/
+dist/
+build/
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Archivos con PII de clientes — NUNCA commitear
+*clientes*.csv
+*usuarios*.csv
+*export*.xlsx
+uploads/

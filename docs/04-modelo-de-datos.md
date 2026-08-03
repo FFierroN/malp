@@ -1,0 +1,164 @@
+# 04 - Modelo de Datos
+
+Diseño preliminar de las tablas. Pensado para SQLite pero sirve igual para
+PostgreSQL. Es un borrador: lo afinamos al construir.
+
+> Convención: `id` autoincremental como clave primaria; `*_id` son llaves foráneas.
+
+---
+
+## Tabla: usuarios
+
+El cliente de la tienda.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| nombre | TEXT | |
+| email | TEXT | único (o teléfono) |
+| password_hash | TEXT | nunca la contraseña en texto plano |
+| avatar_url | TEXT | opcional |
+| puntos_actuales | INTEGER | saldo de la tarjeta de fidelidad |
+| creado_en | DATETIME | |
+
+---
+
+## Tabla: catalogo_plantas
+
+Las plantas que ofrece la tienda (la "vitrina"). Compartida entre todos.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| nombre_comun | TEXT | ej. "Potos" |
+| nombre_cientifico | TEXT | ej. "Epipremnum aureum" |
+| descripcion | TEXT | |
+| tipo | TEXT | interior / exterior / suculenta / etc. |
+| dificultad | TEXT | fácil / media / difícil |
+| foto_url | TEXT | |
+| precio | REAL | opcional |
+| cuidado_riego_dias | INTEGER | plantilla de cuidado por defecto |
+| cuidado_luz | TEXT | ej. "luz indirecta" |
+| creado_en | DATETIME | |
+
+---
+
+## Tabla: mis_plantas (la Pokédex del usuario)
+
+Instancia personal de una planta que el usuario posee.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| usuario_id | INTEGER FK -> usuarios | |
+| catalogo_id | INTEGER FK -> catalogo_plantas | puede ser NULL si es planta "a mano" |
+| apodo | TEXT | ej. "Pancho el potos" |
+| foto_propia_url | TEXT | foto que sube el usuario |
+| fecha_adquisicion | DATE | |
+| estado_salud | TEXT | sana / enferma / recuperación |
+| notas | TEXT | |
+| creado_en | DATETIME | |
+
+---
+
+## Tabla: cuidados_historial
+
+Registro de cada acción de cuidado sobre una planta del usuario.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| mi_planta_id | INTEGER FK -> mis_plantas | |
+| tipo_cuidado | TEXT | riego / abono / poda / trasplante |
+| fecha | DATETIME | cuándo se hizo |
+| nota | TEXT | opcional |
+
+> Los "próximos cuidados" se calculan: última fecha de riego + `cuidado_riego_dias`.
+
+---
+
+## Tabla: misiones
+
+Las misiones disponibles para ganar puntos.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| titulo | TEXT | ej. "Registra 3 plantas" |
+| descripcion | TEXT | |
+| puntos | INTEGER | recompensa |
+| tipo_verificacion | TEXT | automatica / manual / codigo_qr |
+| meta | INTEGER | ej. 3 (plantas), 5 (riegos) |
+| activa | BOOLEAN | |
+
+---
+
+## Tabla: misiones_usuario
+
+Progreso de cada usuario en cada misión.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| usuario_id | INTEGER FK -> usuarios | |
+| mision_id | INTEGER FK -> misiones | |
+| progreso | INTEGER | ej. 2 de 3 |
+| completada | BOOLEAN | |
+| completada_en | DATETIME | |
+
+---
+
+## Tabla: puntos_historial
+
+Auditoría de todo movimiento de puntos (ganados y gastados).
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| usuario_id | INTEGER FK -> usuarios | |
+| tipo | TEXT | gano / canje |
+| puntos | INTEGER | positivo o negativo |
+| motivo | TEXT | ej. "Misión: Registra 3 plantas" |
+| fecha | DATETIME | |
+
+---
+
+## Tabla: premios
+
+Catálogo de premios/descuentos canjeables.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| nombre | TEXT | ej. "10% de descuento" |
+| descripcion | TEXT | |
+| costo_puntos | INTEGER | |
+| stock | INTEGER | opcional |
+| activo | BOOLEAN | |
+
+---
+
+## Tabla: canjes
+
+Cuando un usuario canjea un premio.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| usuario_id | INTEGER FK -> usuarios | |
+| premio_id | INTEGER FK -> premios | |
+| codigo_canje | TEXT | para mostrar en la tienda |
+| usado | BOOLEAN | la tienda lo marca al aplicarlo |
+| fecha | DATETIME | |
+
+---
+
+## Relaciones (resumen)
+
+```
+usuarios 1---N mis_plantas N---1 catalogo_plantas
+mis_plantas 1---N cuidados_historial
+usuarios 1---N misiones_usuario N---1 misiones
+usuarios 1---N puntos_historial
+usuarios 1---N canjes N---1 premios
+```
