@@ -119,10 +119,24 @@ Cloudflare Pages hospeda la app (que es HTML/JS/CSS estático generado por Vite)
 
 ## 4. Dominio
 
-- Necesitas un dominio, ej. `manosalaplanta.cl` o `.app` / `.com`.
-- Los `.cl` se registran vía NIC Chile (~$10 USD/año). Otros TLD vía Cloudflare
+### Primera instancia (elegido): subdominio GRATIS
+
+Para arrancar NO compramos dominio. Usamos un subdominio gratuito:
+- **Cloudflare Pages** -> `malp.pages.dev` (recomendado: maneja limpio las rutas
+  internas de una SPA hecha con Vite/React).
+- **GitHub Pages** -> `felipe.github.io/malp` (alternativa; requiere un pequeño
+  truco de configuracion para las rutas de la SPA).
+
+Esto deja el costo del proyecto en **$0 real** durante toda la etapa inicial.
+
+### Migrar a dominio propio (cuando se quiera)
+
+El dia que Felipe quiera `manosalaplanta.cl` (o .app/.com), se compra el dominio
+y se "apunta" a la app en minutos, **sin tocar codigo ni perder nada**. El
+subdominio gratis no ata a nada; es solo la etiqueta de la puerta.
+
+- Los `.cl` se registran via NIC Chile (~$10 USD/año). Otros TLD via Cloudflare
   Registrar (a precio de costo).
-- Es el ÚNICO gasto real recurrente del proyecto.
 
 ---
 
@@ -169,8 +183,8 @@ Todo lo que hay que crear/instalar para arrancar:
 | Supabase (free tier) | $0/mes |
 | Cloudflare Pages (free tier) | $0/mes |
 | GitHub (repos) | $0/mes |
-| Dominio | ~$10-15 USD/año |
-| **Total** | **~$1/mes** (solo el dominio) |
+| Dominio | subdominio gratis (.pages.dev / .github.io) al inicio | $0/mes |
+| **Total** | **$0/mes** (dominio propio opcional más adelante) |
 
 ---
 
@@ -204,7 +218,8 @@ Todo lo que hay que crear/instalar para arrancar:
 2. **Backend:** BaaS con Supabase (recomendado) vs backend propio.
 3. **Storage de imágenes:** Supabase Storage (recomendado) vs Cloudflare R2.
 4. **Lenguaje:** TypeScript (recomendado) vs JavaScript.
-5. **Dominio:** ¿qué nombre y TLD? (.cl, .app, .com)
+5. **Dominio:** Primera instancia con **subdominio gratis** (`.pages.dev` o
+   `.github.io`). Dominio propio queda para más adelante. [DECIDIDO]
 
 Cuando confirmes estos 5 puntos, el stack queda cerrado y podemos armar el
 esqueleto del proyecto (Fase 1).
