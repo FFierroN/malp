@@ -212,14 +212,18 @@ Todo lo que hay que crear/instalar para arrancar:
 
 ---
 
-## 9. Resumen de decisiones a confirmar
+## 9. Resumen de decisiones (TODAS CERRADAS)
 
-1. **Librería de UI:** React (recomendado) vs Vue vs Svelte.
-2. **Backend:** BaaS con Supabase (recomendado) vs backend propio.
-3. **Storage de imágenes:** Supabase Storage (recomendado) vs Cloudflare R2.
-4. **Lenguaje:** TypeScript (recomendado) vs JavaScript.
-5. **Dominio:** Primera instancia con **subdominio gratis** (`.pages.dev` o
-   `.github.io`). Dominio propio queda para más adelante. [DECIDIDO]
+1. **Librería de UI:** React. [DECIDIDO]
+2. **Backend:** Supabase (BaaS). [DECIDIDO]
+3. **Storage de imágenes:** Supabase Storage. [DECIDIDO]
+4. **Lenguaje:** TypeScript. [DECIDIDO]
+5. **Dominio/host:** GitHub como primera instancia (repo + GitHub Pages,
+   `felipe.github.io/malp`). Dominio propio queda para más adelante. [DECIDIDO]
 
-Cuando confirmes estos 5 puntos, el stack queda cerrado y podemos armar el
-esqueleto del proyecto (Fase 1).
+Stack final: **Vite + React + TypeScript + Tailwind (PWA)** · **Supabase**
+(Postgres + Auth + Storage) · **GitHub Pages** (hosting inicial, $0).
+
+> Nota de despliegue en GitHub Pages: una SPA con rutas internas necesita el
+> "truco 404.html" (copiar index.html a 404.html) para que al recargar una ruta
+> no dé 404. Está documentado en `app/README.md`. Se resuelve al desplegar, no ahora.

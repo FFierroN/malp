@@ -18,10 +18,12 @@ todo de una. "Camina antes de correr."
 
 ## Fase 1 - Fundaciones (esqueleto técnico)
 
-- [ ] Inicializar proyecto (FastAPI + estructura de carpetas).
-- [ ] Configurar SQLite y crear las tablas del doc 04.
-- [ ] Registro / login / logout de usuarios.
-- [ ] Layout base móvil con Tailwind + PWA manifest (se puede "instalar").
+- [x] Inicializar proyecto (Vite + React + TS, estructura de carpetas por pilar).
+- [x] Config base: Tailwind con paleta de marca, PWA manifest, cliente Supabase.
+- [ ] Instalar dependencias (`pnpm install`) y levantar en local.
+- [ ] Crear proyecto en Supabase y crear las tablas del doc 04.
+- [ ] Registro / login / logout de usuarios (Supabase Auth).
+- [ ] Layout móvil con barra inferior (bottom nav) en vez de la nav provisional.
 
 **Entregable:** puedo crear cuenta, entrar y ver una pantalla de inicio vacía.
 

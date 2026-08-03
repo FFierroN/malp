@@ -42,5 +42,7 @@ y acceso al **"Club de Descuentos Manos a la Planta"**: misiones, puntos y premi
 
 ##  Estado actual
 
-**Fase 0 — Planificación.** Todavía no hay código de la app. Este repo es, por
-ahora, el "plano del arquitecto". Cuando aprobemos el plan, arrancamos a construir.
+**Fase 1 en pausa (esqueleto listo).** La documentación está completa y el
+esqueleto de la PWA vive en [`app/`](app/) (Vite + React + TypeScript + Tailwind
++ Supabase). Falta `pnpm install`, conectar Supabase y construir los pilares.
+Se retoma cuando las ideas estén más definidas. Ver [`app/README.md`](app/README.md).

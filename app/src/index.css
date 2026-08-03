@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: theme("fontFamily.cuerpo");
+  background-color: theme("colors.malp.crema");
+  color: theme("colors.malp.negro");
+}
