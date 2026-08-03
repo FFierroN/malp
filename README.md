@@ -38,6 +38,7 @@ y acceso al **"Club de Descuentos Manos a la Planta"**: misiones, puntos y premi
 | [`docs/05-roadmap-fases.md`](docs/05-roadmap-fases.md) | Cómo construirlo por etapas |
 | [`docs/06-decisiones-pendientes.md`](docs/06-decisiones-pendientes.md) | Lo que falta que definas |
 | [`docs/07-programa-fidelidad.md`](docs/07-programa-fidelidad.md) | Marca, misiones y premios REALES (Manos a la Planta) |
+| [`docs/08-stack-tecnico-detallado.md`](docs/08-stack-tecnico-detallado.md) | **Stack definitivo**: Vite+React+Supabase+Cloudflare, cuentas y costos |
 
 ##  Estado actual
 

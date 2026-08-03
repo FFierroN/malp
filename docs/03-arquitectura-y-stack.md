@@ -1,5 +1,10 @@
 # 03 - Arquitectura y Stack Tecnológico
 
+> NOTA (actualizado): tras revisar preferencias de Felipe, el stack definitivo se
+> movió a **Vite + React + Supabase + Cloudflare Pages**. El detalle completo y
+> autoritativo está en **`08-stack-tecnico-detallado.md`**. Este documento queda
+> como contexto de por qué elegimos PWA y las alternativas evaluadas.
+
 ## Recordatorio de contexto
 
 - ~100 usuarios (o menos). Escala minúscula, y eso es una ventaja.
