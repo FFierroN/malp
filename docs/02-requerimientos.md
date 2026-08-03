@@ -63,28 +63,34 @@ El corazón emocional. Registro personal y único por usuario.
 
 ---
 
-## Pilar 4 - Tarjeta de fidelidad (misiones y puntos)
+## Pilar 4 - Tarjeta de fidelidad (Club de Descuentos)
 
-- **[MVP]** Cada usuario tiene su tarjeta de fidelidad con saldo de puntos.
-- **[MVP]** Lista de misiones disponibles (ej: "compra una planta", "registra 3 plantas",
-  "riega 5 veces esta semana", "visita la tienda").
-- **[MVP]** Al cumplir una misión, se suman puntos.
-- **[MVP]** Catálogo de premios/descuentos y canje de puntos.
+> La mecánica REAL (misiones, puntos y premios de "Manos a la Planta") está en
+> el doc `07-programa-fidelidad.md`. Aquí solo el requerimiento funcional.
+
+- **[MVP]** Cada usuario tiene su tarjeta de fidelidad digital con saldo de puntos.
+- **[MVP]** Lista de las 6 misiones reales con sus puntos (redes, referido, compra,
+  reseña, evento, taller).
+- **[MVP]** El cliente puede "reclamar" una misión y adjuntar prueba (captura/foto/ticket).
+- **[MVP]** Panel de la tienda para **aprobar/rechazar** reclamos pendientes.
+- **[MVP]** Al aprobar, se acreditan los puntos y quedan en el historial.
+- **[MVP]** Catálogo de premios (fertilizante 450 / sustrato 700 / planta 1200) y canje.
+- **[MVP]** Al canjear, se genera un código para mostrar/entregar en la tienda.
 - **[MVP]** Historial de puntos ganados y canjeados.
+- **[V2]** Código único en el ticket para acreditar compras al instante (sin aprobación).
 - **[V2]** Niveles de cliente (bronce/plata/oro) según puntos acumulados.
 - **[V2]** Misiones con vencimiento / temporada.
 
-### El punto clave a definir: ¿CÓMO se registran los puntos?
+### ¿CÓMO se registran los puntos? (RESUELTO por las piezas de marketing)
 
-Esta es la decisión grande (ver doc 06). Opciones:
+Como casi todas las misiones son del mundo físico/social, el modelo es
+**mixto con verificación** (detalle completo en doc 07):
 
-1. **Automático dentro de la app** — misiones que la app puede verificar sola
-   (ej: "registra 3 plantas", "riega X veces"). Cero fricción.
-2. **Manual por la tienda** — el empleado confirma la misión (ej: "vino a la tienda",
-   "compró una planta"). Requiere un panel simple o un código.
-3. **Código QR / código de compra** — la tienda entrega un código en el ticket;
-   el cliente lo escanea/ingresa y se acreditan puntos. Buen balance.
-4. **Mixto** — automático para lo digital, QR/código para lo físico. **Recomendado.**
+- **Reclamo + prueba + aprobación de la tienda** para redes, reseñas, referidos,
+  eventos y talleres.
+- **Código de compra** (V2) para acreditar compras >$7.000 CLP al instante.
+
+Esto implica que la app necesita un **rol de administrador** (panel de la tienda).
 
 ---
 

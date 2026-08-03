@@ -1,10 +1,8 @@
 #  MALP
 
-**M**i **A**pp de **L**ealtad para **P**lantas *(nombre provisional — lo ajustamos cuando quieras)*
-
-Aplicación de fidelización para clientes de una tienda de plantas. Cada cliente
-tiene su propia "Pokédex de plantas", recordatorios de cuidado y una tarjeta de
-lealtad con misiones, puntos y premios.
+App de la tienda de plantas **"Manos a la Planta"** (Chile). Nombre clave interno:
+MALP. Cada cliente tiene su propia "Pokédex de plantas", recordatorios de cuidado
+y acceso al **"Club de Descuentos Manos a la Planta"**: misiones, puntos y premios.
 
 > Proyecto **100% independiente de Walmart**. No usa data gobernada, ni tablas
 > internas, ni BigQuery, ni credenciales corporativas. Datos propios y punto.
@@ -39,6 +37,7 @@ lealtad con misiones, puntos y premios.
 | [`docs/04-modelo-de-datos.md`](docs/04-modelo-de-datos.md) | Tablas y relaciones |
 | [`docs/05-roadmap-fases.md`](docs/05-roadmap-fases.md) | Cómo construirlo por etapas |
 | [`docs/06-decisiones-pendientes.md`](docs/06-decisiones-pendientes.md) | Lo que falta que definas |
+| [`docs/07-programa-fidelidad.md`](docs/07-programa-fidelidad.md) | Marca, misiones y premios REALES (Manos a la Planta) |
 
 ##  Estado actual
 

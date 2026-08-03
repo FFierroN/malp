@@ -5,27 +5,23 @@ No hace falta responder todo hoy; pero cada respuesta destraba una parte.
 
 ---
 
-## 1. El nombre y la marca
+## 1. El nombre y la marca  [RESUELTO]
 
-- ¿"MALP" es el nombre final o solo clave interna?
-- ¿Hay nombre de la tienda de plantas que quieras integrar?
-- Colores / estilo (verde natural, minimalista, colorido tipo juego...).
+- Tienda: **Manos a la Planta**. Club: **Club de Descuentos Manos a la Planta**.
+- Paleta: verde brillante + amarillo + blanco/gris + titulares negros bold.
+- Logo: hoja de monstera. (Ver doc 07 para detalles.)
+- Pendiente menor: ¿conservamos "MALP" solo como nombre interno del repo? (Sugiero que sí.)
 
 ---
 
-## 2. LA GRANDE: ¿cómo se registran los puntos?
+## 2. ¿Cómo se registran los puntos?  [RESUELTO por las piezas de marketing]
 
-Esta define buena parte de la app. Opciones (ver también doc 02, Pilar 4):
+Modelo **mixto con verificación** (detalle en doc 07):
+- Reclamo + prueba + aprobación de la tienda para redes, reseñas, referidos, eventos y talleres.
+- (V2) Código de compra para acreditar compras >$7.000 CLP al instante.
 
-- **A) Solo automático:** solo misiones que la app verifica sola (registrar
-  plantas, registrar riegos, rachas). Cero fricción, pero no premia la compra física.
-- **B) Manual por la tienda:** un empleado confirma misiones desde un panel.
-  Requiere construir ese panel y que alguien lo use.
-- **C) Código / QR en el ticket:** la tienda entrega un código al comprar; el
-  cliente lo ingresa y suma puntos. Conecta lo físico con lo digital sin panel complejo.
-- **D) Mixto (recomendado):** automático para lo digital + código/QR para compras.
-
-**Mi recomendación:** D. Pero decide tú según cómo opera la tienda.
+Decisión menor que queda: ¿en el MVP las compras también van por "reclamo + foto del
+ticket", y dejamos el código automático para V2? (Sugiero que sí: menos que construir.)
 
 ---
 

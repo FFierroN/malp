@@ -6,6 +6,11 @@
 - App orientada al cliente, uso mayormente en celular.
 - Un solo desarrollador (tú, con ayuda de Kira) manteniéndola.
 
+> Nota: además de la app del cliente, la tienda necesita un **panel de admin
+> mínimo** (aprobar reclamos de misiones, generar códigos, cargar catálogo).
+> No es una app aparte: es una sección protegida por rol 'admin' dentro del
+> mismo proyecto. Ver doc 07.
+
 Con esos números, **cualquier stack moderno sirve de sobra**. La pregunta real
 es: ¿qué es lo más simple de construir y mantener?
 

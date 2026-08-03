@@ -18,6 +18,7 @@ El cliente de la tienda.
 | email | TEXT | único (o teléfono) |
 | password_hash | TEXT | nunca la contraseña en texto plano |
 | avatar_url | TEXT | opcional |
+| rol | TEXT | 'cliente' (por defecto) o 'admin' (tienda) |
 | puntos_actuales | INTEGER | saldo de la tarjeta de fidelidad |
 | creado_en | DATETIME | |
 
@@ -84,12 +85,32 @@ Las misiones disponibles para ganar puntos.
 | Campo | Tipo | Notas |
 |-------|------|-------|
 | id | INTEGER PK | |
-| titulo | TEXT | ej. "Registra 3 plantas" |
-| descripcion | TEXT | |
-| puntos | INTEGER | recompensa |
-| tipo_verificacion | TEXT | automatica / manual / codigo_qr |
-| meta | INTEGER | ej. 3 (plantas), 5 (riegos) |
+| titulo | TEXT | ej. "Compra en la tienda" |
+| descripcion | TEXT | ej. "Solo compras sobre $7.000 CLP" |
+| puntos | INTEGER | recompensa (80/100/120/200 según doc 07) |
+| tipo_verificacion | TEXT | manual (con prueba) / codigo |
+| repetible | BOOLEAN | ¿se puede cumplir más de una vez? (compra=sí, etc.) |
 | activa | BOOLEAN | |
+
+> Las 6 misiones reales (redes 80, referido 100, compra 120, reseña 100,
+> evento 200, taller 200) se cargan como datos iniciales. Ver doc 07.
+
+---
+
+## Tabla: reclamos_mision
+
+Cuando el cliente dice "ya cumplí esta misión" y la tienda debe validar.
+
+| Campo | Tipo | Notas |
+|-------|------|-------|
+| id | INTEGER PK | |
+| usuario_id | INTEGER FK -> usuarios | |
+| mision_id | INTEGER FK -> misiones | |
+| prueba_url | TEXT | captura/foto/ticket que sube el cliente |
+| estado | TEXT | pendiente / aprobado / rechazado |
+| revisado_por | INTEGER FK -> usuarios | el admin que resolvió |
+| creado_en | DATETIME | |
+| resuelto_en | DATETIME | |
 
 ---
 
@@ -158,6 +179,7 @@ Cuando un usuario canjea un premio.
 ```
 usuarios 1---N mis_plantas N---1 catalogo_plantas
 mis_plantas 1---N cuidados_historial
+usuarios 1---N reclamos_mision N---1 misiones
 usuarios 1---N misiones_usuario N---1 misiones
 usuarios 1---N puntos_historial
 usuarios 1---N canjes N---1 premios

@@ -61,16 +61,18 @@ todo de una. "Camina antes de correr."
 
 ---
 
-## Fase 5 - Fidelidad (misiones, puntos, premios)
+## Fase 5 - Fidelidad (Club de Descuentos Manos a la Planta)
 
 - [ ] Tarjeta de fidelidad con saldo de puntos.
-- [ ] Lista de misiones y progreso.
-- [ ] Verificación automática de misiones digitales.
-- [ ] Mecanismo para misiones físicas (QR/código - según decisión doc 06).
-- [ ] Catálogo de premios y canje.
+- [ ] Cargar las 6 misiones reales (doc 07) y mostrarlas con sus puntos.
+- [ ] El cliente reclama una misión y adjunta prueba (captura/foto/ticket).
+- [ ] Panel de la tienda (rol admin): aprobar/rechazar reclamos pendientes.
+- [ ] Al aprobar, se acreditan los puntos automaticamente.
+- [ ] Catalogo de premios (450/700/1200) y canje con codigo de retiro.
 - [ ] Historial de puntos.
+- [ ] (V2) Codigo de compra para acreditar compras al instante.
 
-**Entregable:** el círculo de fidelización completo funcionando.
+**Entregable:** el circulo de fidelizacion completo funcionando.
 
 ---
 
