@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: theme("fontFamily.cuerpo");
-  background-color: #e7e5df;
+  background-color: #dedcd4;
   color: theme("colors.malp.negro");
   -webkit-font-smoothing: antialiased;
 }

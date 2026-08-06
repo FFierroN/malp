@@ -99,7 +99,7 @@ export default function Perfil() {
           })}
         </div>
 
-        <p className="mt-6 text-center font-titulo text-sm italic text-malp-verde">
+        <p className="mt-6 text-center font-logo text-xl text-malp-verde">
           Cuidemos juntos nuestra jungla
         </p>
       </Pantalla>

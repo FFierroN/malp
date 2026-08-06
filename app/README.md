@@ -25,7 +25,7 @@ instalable.
 
 ```
 app/
-├── index.html              punto de entrada + fuentes (Fraunces / Nunito)
+├── index.html              punto de entrada + fuentes (Poppins / Inter / Caveat)
 ├── vite.config.ts          config Vite + PWA (base "/malp/" para GitHub Pages)
 ├── tailwind.config.js      paleta Manos a la Planta (verde/amarillo/crema/negro)
 ├── scripts/spa-404.mjs     genera 404.html para el routing en GitHub Pages

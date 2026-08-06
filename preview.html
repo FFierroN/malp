@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script>
@@ -17,24 +17,27 @@
           extend: {
             colors: {
               malp: {
-                verde: "#26C165",
-                "verde-osc": "#1B4D3E",
-                amarillo: "#F6D74E",
-                crema: "#F2F1EC",
-                negro: "#111111",
+                verde: "#7EA85B",
+                "verde-osc": "#1F6B3A",
+                amarillo: "#9ACD32",
+                crema: "#F8F7F2",
+                negro: "#2F3A32",
+                borde: "#E6E4DD",
               },
             },
             fontFamily: {
-              titulo: ["Fraunces", "serif"],
-              cuerpo: ["Nunito", "sans-serif"],
+              titulo: ["Poppins", "sans-serif"],
+              cuerpo: ["Inter", "sans-serif"],
+              logo: ["Caveat", "cursive"],
             },
           },
         },
       };
     </script>
     <style>
-      body { font-family: "Nunito", sans-serif; background: #d9d7d0; }
-      .titulo { font-family: "Fraunces", serif; }
+      body { font-family: "Inter", sans-serif; background: #dedcd4; }
+      .titulo { font-family: "Poppins", sans-serif; }
+      .logo { font-family: "Caveat", cursive; }
       .scroll-limpio::-webkit-scrollbar { display: none; }
       .scroll-limpio { scrollbar-width: none; }
       .screen { display: none; }
@@ -77,12 +80,13 @@
               <svg class="h-6 w-6"><use href="#i-menu"/></svg>
               <div class="flex items-center gap-2">
                 <svg class="h-6 w-6 text-malp-verde"><use href="#i-leaf"/></svg>
-                <span class="titulo text-lg italic">Manos a la Planta</span>
+                <span class="logo text-2xl text-malp-verde-osc">Manos a la Planta</span>
               </div>
               <svg class="h-6 w-6"><use href="#i-bell"/></svg>
             </div>
             <h1 class="titulo mt-4 text-3xl text-malp-verde-osc">Hola, Camila!</h1>
             <p class="mt-1 text-sm text-black/60">Gracias por ser parte de nuestra jungla</p>
+            <p class="mt-0.5 text-xs font-bold text-malp-verde">Socia desde Marzo 2025</p>
 
             <div class="mt-5 rounded-3xl bg-white p-4 shadow-lg">
               <p class="text-sm font-bold text-black/50">Tus puntos</p>
@@ -282,7 +286,7 @@
             </div>
             <h3 class="titulo mt-6 text-lg text-malp-verde-osc">Beneficios de tu club</h3>
             <div class="mt-2 space-y-2" id="lista-beneficios"></div>
-            <p class="titulo mt-6 text-center text-sm italic text-malp-verde">Cuidemos juntos nuestra jungla</p>
+            <p class="logo mt-6 text-center text-xl text-malp-verde">Cuidemos juntos nuestra jungla</p>
           </section>
         </div>
 

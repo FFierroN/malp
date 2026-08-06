@@ -14,6 +14,8 @@ import {
   Leaf,
   Repeat,
   PartyPopper,
+  Thermometer,
+  Wind,
 } from "lucide-react";
 import { StatusBar, PlantPoster, Chip } from "@/components/ui";
 import { Pantalla } from "@/components/Layout";
@@ -145,9 +147,9 @@ export default function DetallePlanta() {
         )}
 
         {tab === "Notas" && (
-          <p className="mt-6 rounded-2xl bg-white p-4 text-sm text-malp-negro/60 shadow-tarjeta">
-            Aun no hay notas para {planta.nombre}. Aca podras anotar lo que
-            quieras recordar: donde la ubicaste, como reacciona al sol, etc.
+          <p className="mt-6 rounded-2xl bg-white p-4 text-sm text-malp-negro/70 shadow-tarjeta">
+            {planta.nota ??
+              `Aun no hay notas para ${planta.nombre}. Aca podras anotar lo que quieras recordar: donde la ubicaste, como reacciona al sol, etc.`}
           </p>
         )}
 
@@ -155,6 +157,16 @@ export default function DetallePlanta() {
           <div className="mt-4 space-y-3">
             <Cuidado icon={Droplet} label="Riego" valor={planta.proximoRiego} />
             <Cuidado icon={Sun} label="Luz" valor={planta.luz} />
+            {planta.temperatura && (
+              <Cuidado
+                icon={Thermometer}
+                label="Temperatura"
+                valor={planta.temperatura}
+              />
+            )}
+            {planta.humedad && (
+              <Cuidado icon={Wind} label="Humedad" valor={planta.humedad} />
+            )}
             <Cuidado
               icon={Sprout}
               label="Dificultad"

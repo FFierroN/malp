@@ -24,7 +24,7 @@ export default function Inicio() {
           </button>
           <div className="flex items-center gap-2 text-malp-verde-osc">
             <Hoja size={26} className="text-malp-verde" />
-            <span className="font-titulo text-lg italic">Manos a la Planta</span>
+            <span className="font-logo text-2xl text-malp-verde-osc">Manos a la Planta</span>
           </div>
           <button aria-label="Notificaciones" className="text-malp-verde-osc">
             <Bell size={24} />
@@ -37,6 +37,9 @@ export default function Inicio() {
         </h1>
         <p className="mt-1 text-sm text-malp-negro/60">
           Gracias por ser parte de nuestra jungla
+        </p>
+        <p className="mt-0.5 text-xs font-bold text-malp-verde">
+          Socia desde {usuario.miembroDesde}
         </p>
 
         {/* Tarjeta de puntos */}

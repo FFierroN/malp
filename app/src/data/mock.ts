@@ -21,6 +21,10 @@ export interface Planta {
   maceta: string;
   compradaEn: string;
   fechaCompra: string;
+  salud?: string;
+  temperatura?: string;
+  humedad?: string;
+  nota?: string;
 }
 
 export interface EventoActividad {
@@ -58,6 +62,7 @@ export interface HitoPuntos {
 // --- Usuario actual (ficticio) -------------------------------------------
 export const usuario = {
   nombre: "Camila",
+  miembroDesde: "Marzo 2025",
   puntos: 1325,
   metaPuntos: 2000,
   ultimaInteraccion: {
@@ -85,6 +90,10 @@ export const plantas: Planta[] = [
     maceta: "Ceramica blanca",
     compradaEn: "Manos a la Planta",
     fechaCompra: "12 may 2024",
+    salud: "Excelente",
+    temperatura: "18 - 28 C",
+    humedad: "Media",
+    nota: "Le salio una hoja nueva despues del cambio de sustrato.",
   },
   {
     id: "luna",
