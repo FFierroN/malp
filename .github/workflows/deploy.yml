@@ -11,10 +11,11 @@ permissions:
   pages: write
   id-token: write
 
-# Evita despliegues pisandose entre si.
+# Una sola cola de despliegue: las corridas ESPERAN en vez de cancelarse
+# entre si (recomendacion oficial de GitHub para Pages).
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
