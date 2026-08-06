@@ -71,22 +71,77 @@ export function ProgressBar({ valor, max }: { valor: number; max: number }) {
   );
 }
 
-// --- "Poster" de planta (placeholder visual con gradiente + hoja) --------
+// --- "Poster" de planta: foto real si existe, si no gradiente + hoja ------
 export function PlantPoster({
   gradiente,
+  foto,
   className = "",
   size = 40,
 }: {
   gradiente: string;
+  foto?: string;
   className?: string;
   size?: number;
 }) {
   return (
     <div
-      className={`flex items-center justify-center bg-gradient-to-br ${gradiente} ${className}`}
+      className={`relative flex items-center justify-center overflow-hidden bg-gradient-to-br ${gradiente} ${className}`}
     >
       <Hoja size={size} className="text-white/85" />
+      {foto && (
+        <img
+          src={foto}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          onError={(e) => {
+            // Si la foto no existe todavia, se oculta y queda el poster.
+            e.currentTarget.style.display = "none";
+          }}
+        />
+      )}
     </div>
+  );
+}
+
+// --- Logo de marca: dos hojas monstera (bosque + lima) -------------------
+// Recreacion en SVG del logo oficial "Manos a la Planta". Cuando Felipe deje
+// el PNG/SVG oficial en public/, se reemplaza por <img src="/malp/logo.svg">.
+export function Logo({
+  size = 32,
+  conTexto = false,
+}: {
+  size?: number;
+  conTexto?: boolean;
+}) {
+  return (
+    <span className="inline-flex items-center gap-2">
+      <svg
+        viewBox="0 0 48 40"
+        width={size * 1.2}
+        height={size}
+        aria-label="Manos a la Planta"
+      >
+        {/* Hoja grande (verde bosque) */}
+        <g transform="translate(2 2)">
+          <path
+            fill="#1F6B3A"
+            d="M14 34C4 30 0 20 3 10 5 3 12 0 20 0c9 0 14 6 14 15 0 11-9 20-20 19Zm3-5c6-1 11-7 11-14 0-4-2-7-6-8 1 3 0 6-2 8-1-2-1-4-3-5 1 4-1 7-4 8 2 0 3 1 3 3-2 0-4 0-5 2 2 1 4 2 6 1Z"
+          />
+        </g>
+        {/* Hoja chica (lima) */}
+        <g transform="translate(26 12) scale(0.62)">
+          <path
+            fill="#9ACD32"
+            d="M14 34C4 30 0 20 3 10 5 3 12 0 20 0c9 0 14 6 14 15 0 11-9 20-20 19Z"
+          />
+        </g>
+      </svg>
+      {conTexto && (
+        <span className="font-logo text-2xl leading-none text-malp-verde-osc">
+          Manos a la Planta
+        </span>
+      )}
+    </span>
   );
 }
 

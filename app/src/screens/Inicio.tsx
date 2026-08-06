@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Menu, Bell, Library, ScanLine, BellRing, Star } from "lucide-react";
-import { StatusBar, Card, ProgressBar, Hoja } from "@/components/ui";
+import { StatusBar, Card, ProgressBar, Hoja, Logo } from "@/components/ui";
 import { Pantalla } from "@/components/Layout";
 import { usuario, puntosFaltantes } from "@/data/mock";
 
@@ -23,8 +23,7 @@ export default function Inicio() {
             <Menu size={26} />
           </button>
           <div className="flex items-center gap-2 text-malp-verde-osc">
-            <Hoja size={26} className="text-malp-verde" />
-            <span className="font-logo text-2xl text-malp-verde-osc">Manos a la Planta</span>
+            <Logo size={26} conTexto />
           </div>
           <button aria-label="Notificaciones" className="text-malp-verde-osc">
             <Bell size={24} />

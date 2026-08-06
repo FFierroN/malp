@@ -72,6 +72,7 @@ export default function Plantoteca() {
             >
               <PlantPoster
                 gradiente={p.gradiente}
+                foto={p.foto}
                 className="h-20 w-20 shrink-0 rounded-2xl"
                 size={34}
               />

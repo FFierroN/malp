@@ -13,6 +13,7 @@ export interface Planta {
   categoria: Categoria;
   emoji: string; // placeholder visual mientras no hay fotos reales
   gradiente: string; // clases tailwind para el "poster" de la planta
+  foto?: string; // ruta a la foto real en public/plantas/ (opcional)
   ultimoRiego: string; // texto humano (ej. "Hace 5 dias")
   proximoRiego: string; // texto humano (ej. "En 3 dias")
   luz: string;
@@ -73,6 +74,10 @@ export const usuario = {
 
 export const puntosFaltantes = usuario.metaPuntos - usuario.puntos;
 
+// Helper: arma la ruta a una foto en public/plantas/ respetando la base
+// ("/malp/"). Deja los archivos ahi y apareceran automaticamente.
+const foto = (archivo: string) => `${import.meta.env.BASE_URL}plantas/${archivo}`;
+
 // --- Coleccion de plantas ("Mi Plantoteca") ------------------------------
 export const plantas: Planta[] = [
   {
@@ -82,6 +87,7 @@ export const plantas: Planta[] = [
     categoria: "Interior",
     emoji: "",
     gradiente: "from-emerald-700 to-emerald-500",
+    foto: foto("margarita.jpg"),
     ultimoRiego: "Hace 5 dias",
     proximoRiego: "En 3 dias",
     luz: "Luz indirecta",
@@ -102,6 +108,7 @@ export const plantas: Planta[] = [
     categoria: "Interior",
     emoji: "",
     gradiente: "from-green-800 to-lime-600",
+    foto: foto("luna.jpg"),
     ultimoRiego: "Hace 2 dias",
     proximoRiego: "En 3 dias",
     luz: "Luz media",
@@ -118,6 +125,7 @@ export const plantas: Planta[] = [
     categoria: "Interior",
     emoji: "",
     gradiente: "from-teal-800 to-emerald-600",
+    foto: foto("selva.jpg"),
     ultimoRiego: "Hace 7 dias",
     proximoRiego: "En 1 dia",
     luz: "Luz indirecta",

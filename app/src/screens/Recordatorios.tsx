@@ -62,6 +62,7 @@ export default function Recordatorios() {
                       >
                         <PlantPoster
                           gradiente={planta.gradiente}
+                          foto={planta.foto}
                           className="h-14 w-14 shrink-0 rounded-2xl"
                           size={24}
                         />
