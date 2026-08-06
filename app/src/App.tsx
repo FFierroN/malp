@@ -1,37 +1,31 @@
-import { Routes, Route, Link } from "react-router-dom";
-import Inicio from "@/features/inicio/Inicio";
-import Login from "@/features/auth/Login";
-import Catalogo from "@/features/catalogo/Catalogo";
-import MiColeccion from "@/features/coleccion/MiColeccion";
-import Cuidados from "@/features/cuidados/Cuidados";
-import Fidelidad from "@/features/fidelidad/Fidelidad";
-import Admin from "@/features/admin/Admin";
+import { Routes, Route } from "react-router-dom";
+import Layout from "@/components/Layout";
+import Inicio from "@/screens/Inicio";
+import MiMonstera from "@/screens/MiMonstera";
+import Plantoteca from "@/screens/Plantoteca";
+import DetallePlanta from "@/screens/DetallePlanta";
+import Recordatorios from "@/screens/Recordatorios";
+import Identificar from "@/screens/Identificar";
+import ResultadoIA from "@/screens/ResultadoIA";
+import Recompensas from "@/screens/Recompensas";
+import Tienda from "@/screens/Tienda";
+import Perfil from "@/screens/Perfil";
 
-// Esqueleto de navegacion. Se reemplazara por un layout con barra inferior
-// (bottom nav) estilo app movil cuando definamos el diseno.
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <nav className="flex flex-wrap gap-3 bg-malp-verde p-4 text-white">
-        <Link to="/">Inicio</Link>
-        <Link to="/catalogo">Catalogo</Link>
-        <Link to="/coleccion">Mi coleccion</Link>
-        <Link to="/cuidados">Cuidados</Link>
-        <Link to="/fidelidad">Fidelidad</Link>
-        <Link to="/login">Entrar</Link>
-        <Link to="/admin">Admin</Link>
-      </nav>
-      <main className="p-4">
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/catalogo" element={<Catalogo />} />
-          <Route path="/coleccion" element={<MiColeccion />} />
-          <Route path="/cuidados" element={<Cuidados />} />
-          <Route path="/fidelidad" element={<Fidelidad />} />
-          <Route path="/admin" element={<Admin />} />
-        </Routes>
-      </main>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/monstera" element={<MiMonstera />} />
+        <Route path="/plantoteca" element={<Plantoteca />} />
+        <Route path="/plantoteca/:id" element={<DetallePlanta />} />
+        <Route path="/recordatorios" element={<Recordatorios />} />
+        <Route path="/identificar" element={<Identificar />} />
+        <Route path="/identificar/resultado" element={<ResultadoIA />} />
+        <Route path="/recompensas" element={<Recompensas />} />
+        <Route path="/tienda" element={<Tienda />} />
+        <Route path="/perfil" element={<Perfil />} />
+      </Route>
+    </Routes>
   );
 }

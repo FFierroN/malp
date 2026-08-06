@@ -1,19 +1,17 @@
 {
   "name": "malp-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
-  "description": "Manos a la Planta - PWA de coleccion de plantas y club de fidelidad",
+  "description": "Manos a la Planta - PWA de coleccion de plantas y club de fidelidad (mockup)",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "eslint .",
     "deploy:pages": "npm run build && node scripts/spa-404.mjs"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.0",
-    "@tanstack/react-query": "^5.51.0",
+    "lucide-react": "^0.441.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.0"
@@ -23,7 +21,6 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
-    "eslint": "^9.9.0",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",

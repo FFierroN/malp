@@ -1,60 +1,69 @@
-# MALP - app (PWA)
+# MALP - app (PWA · mockup navegable)
 
 Frontend de **Manos a la Planta**: Vite + React + TypeScript + Tailwind, PWA
-instalable. Backend por **Supabase** (Postgres + Auth + Storage).
+instalable.
 
-> Estado: **esqueleto**. Estructura lista, sin dependencias instaladas todavia.
-> Retomar cuando las ideas esten mas definidas (ver ../docs/05-roadmap-fases.md).
+> Estado: **mockup navegable con datos ficticios** (sin backend todavia).
+> Las 8 pantallas del prototipo estan construidas y conectadas. Supabase se
+> enchufa mas adelante (ver ../docs/05-roadmap-fases.md).
+
+## Las 8 pantallas
+
+| Ruta | Pantalla |
+|------|----------|
+| `/` | Inicio (saludo, puntos, accesos rapidos) |
+| `/monstera` | Mi Monstera (arbol de recompensas por puntos) |
+| `/plantoteca` | Mi Plantoteca (coleccion, buscador y filtros) |
+| `/plantoteca/:id` | Detalle de planta (Actividad / Notas / Cuidados) |
+| `/recordatorios` | Recordatorios (Hoy / Manana / En 3 dias) |
+| `/identificar` | Identificar con IA (camara) |
+| `/identificar/resultado` | Resultado IA (Alocasia Polly, 95%) |
+| `/recompensas` | Recompensas (canje de puntos) |
+| `/tienda` · `/perfil` | Pantallas de la barra inferior |
 
 ## Estructura
 
 ```
 app/
-├── index.html              punto de entrada HTML
+├── index.html              punto de entrada + fuentes (Fraunces / Nunito)
 ├── vite.config.ts          config Vite + PWA (base "/malp/" para GitHub Pages)
 ├── tailwind.config.js      paleta Manos a la Planta (verde/amarillo/crema/negro)
-├── .env.example            plantilla de variables (copiar a .env.local)
 ├── scripts/spa-404.mjs     genera 404.html para el routing en GitHub Pages
-├── public/favicon.svg      icono provisional (hoja)
 └── src/
-    ├── main.tsx            arranque React + Router + React Query
-    ├── App.tsx             rutas y navegacion base
-    ├── index.css           Tailwind + estilos base
-    ├── lib/supabase.ts     cliente unico de Supabase
-    ├── components/         componentes reutilizables (Placeholder)
-    └── features/           un pilar por carpeta:
-        ├── inicio/         vitrina / bienvenida
-        ├── auth/           login y registro
-        ├── catalogo/       catalogo de la tienda
-        ├── coleccion/      Pokedex del usuario
-        ├── cuidados/       cuidados y recordatorios
-        ├── fidelidad/      Club de Descuentos (misiones/puntos/premios)
-        └── admin/          panel de la tienda (rol admin)
+    ├── main.tsx            arranque React + Router
+    ├── App.tsx             rutas de las 8 pantallas
+    ├── data/mock.ts        TODOS los datos ficticios (Camila, plantas, etc.)
+    ├── components/         Layout (marco de celular), BottomNav, ui.tsx
+    └── screens/            una pantalla por archivo
 ```
 
-## Como levantarlo (cuando retomemos)
-
-Requiere Node.js LTS. Recomendado pnpm (o npm).
+## Como levantarlo (en tu PC con Node.js LTS)
 
 ```bash
 cd MALP/app
-pnpm install            # instalar dependencias
-cp .env.example .env.local   # y rellenar con datos de Supabase
-pnpm dev                # abre http://localhost:5173/malp/
+npm install        # instalar dependencias (una sola vez)
+npm run dev        # abre http://localhost:5173/malp/
 ```
 
-## Desplegar en GitHub Pages (cuando este listo)
+Se ve como un celular centrado en el escritorio. Para probarlo "de verdad":
+abri las DevTools del navegador (F12) y activa la vista movil (Toggle device
+toolbar), o abrilo desde tu telefono en la misma red.
+
+## Desplegar en GitHub Pages
 
 ```bash
-pnpm run deploy:pages   # build + genera 404.html
+npm run deploy:pages   # build + genera 404.html en dist/
 ```
 
-Luego se publica la carpeta `dist/` en la rama/config de GitHub Pages.
+Luego se publica `dist/` en GitHub Pages (te guio con GitHub Actions o rama
+`gh-pages`). La app quedara en `https://TU-USUARIO.github.io/malp/`.
 
 ## Notas
 
-- La `base` en `vite.config.ts` y el `basename` en `main.tsx` estan en `/malp`
-  para GitHub Pages. Con dominio propio o Cloudflare Pages, cambiar ambos a `/`.
-- Faltan iconos PWA `icon-192.png` e `icon-512.png` en `public/` (se agregan al
-  definir el logo final).
-- La seguridad de datos vive en las politicas RLS de Supabase (ver ../docs/08).
+- `base` (vite.config.ts) y `basename` (main.tsx) estan en `/malp` para GitHub
+  Pages. Con dominio propio, cambiar ambos a `/`.
+- Las "fotos" de plantas son posters con gradiente + hoja (placeholder). Cuando
+  haya fotos reales se reemplaza el componente `PlantPoster`.
+- Faltan iconos PWA `icon-192.png`/`icon-512.png` en `public/` (se agregan al
+  cerrar el logo final; no bloquean el dev).
+- Datos 100% ficticios en `src/data/mock.ts`. Sin backend, sin PII, $0.

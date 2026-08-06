@@ -2,9 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+}
+
 body {
   margin: 0;
   font-family: theme("fontFamily.cuerpo");
-  background-color: theme("colors.malp.crema");
+  background-color: #e7e5df;
   color: theme("colors.malp.negro");
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Oculta la barra de scroll dentro del "celular" pero mantiene el scroll. */
+.scroll-limpio {
+  scrollbar-width: none;
+}
+.scroll-limpio::-webkit-scrollbar {
+  display: none;
 }
