@@ -48,7 +48,7 @@ export default function DetallePlanta() {
     <>
       {/* Cabecera con "foto" (poster) */}
       <div className="relative">
-PlantPoster
+        <PlantPoster
           gradiente={planta.gradiente}
           foto={planta.foto}
           className="h-64 w-full"
