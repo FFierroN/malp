@@ -31,14 +31,13 @@ export default function ResultadoIA() {
             </span>
           </div>
           <PlantPoster
-            gradiente="from-emerald-800 to-emerald-500"
             className="ml-auto h-24 w-24 shrink-0 rounded-3xl"
             size={44}
           />
         </div>
 
         {/* Atributos */}
-        <div className="mt-5 divide-y divide-black/5 rounded-3xl bg-white px-4 shadow-tarjeta">
+        <div className="mt-5 divide-y divide-malp-borde rounded-tarjeta border border-malp-borde bg-malp-papel px-4 shadow-tarjeta">
           {resultadoIA.atributos.map((attr, i) => {
             const Icon = iconos[i] ?? Gauge;
             return (
@@ -70,7 +69,7 @@ export default function ResultadoIA() {
         </button>
         <button
           onClick={() => navigate("/identificar")}
-          className="mt-2 w-full rounded-full bg-white py-3 text-sm font-bold text-malp-negro/60 shadow-tarjeta transition active:scale-[0.98]"
+          className="mt-2 w-full rounded-boton border border-malp-borde bg-malp-papel py-3 text-sm font-semibold text-malp-negro/60 shadow-tarjeta transition duration-300 active:scale-[0.98]"
         >
           No, gracias
         </button>

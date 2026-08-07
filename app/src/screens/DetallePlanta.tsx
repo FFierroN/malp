@@ -49,7 +49,6 @@ export default function DetallePlanta() {
       {/* Cabecera con "foto" (poster) */}
       <div className="relative">
         <PlantPoster
-          gradiente={planta.gradiente}
           foto={planta.foto}
           className="h-64 w-full"
           size={80}
@@ -60,13 +59,13 @@ export default function DetallePlanta() {
             <button
               aria-label="Volver"
               onClick={() => navigate("/plantoteca")}
-              className="rounded-full bg-white/30 p-2 backdrop-blur"
+              className="rounded-full bg-malp-papel/40 p-2 backdrop-blur"
             >
               <ArrowLeft size={20} className="text-white" />
             </button>
             <button
               aria-label="Editar"
-              className="rounded-full bg-white/30 p-2 backdrop-blur"
+              className="rounded-full bg-malp-papel/40 p-2 backdrop-blur"
             >
               <Pencil size={18} className="text-white" />
             </button>
@@ -74,7 +73,7 @@ export default function DetallePlanta() {
         </div>
         <button
           aria-label="Cambiar foto"
-          className="absolute -bottom-5 right-6 flex h-11 w-11 items-center justify-center rounded-full bg-white text-malp-verde-osc shadow-tarjeta"
+          className="absolute -bottom-5 right-6 flex h-11 w-11 items-center justify-center rounded-full bg-malp-papel text-malp-verde-osc shadow-tarjeta transition duration-300 active:scale-95"
         >
           <Camera size={20} />
         </button>
@@ -94,7 +93,7 @@ export default function DetallePlanta() {
         </div>
 
         {/* Ficha */}
-        <div className="mt-5 grid grid-cols-2 gap-4 rounded-3xl bg-white p-4 shadow-tarjeta">
+        <div className="mt-5 grid grid-cols-2 gap-4 rounded-tarjeta border border-malp-borde bg-malp-papel p-4 shadow-tarjeta">
           <Dato icon={Store} label="Comprada en" valor={planta.compradaEn} />
           <Dato icon={Flower2} label="Maceta" valor={planta.maceta} />
           <Dato icon={Calendar} label="Fecha" valor={planta.fechaCompra} />
@@ -102,7 +101,7 @@ export default function DetallePlanta() {
         </div>
 
         {/* Tabs */}
-        <div className="mt-5 flex gap-6 border-b border-black/10">
+        <div className="mt-5 flex gap-6 border-b border-malp-borde">
           {tabs.map((t) => (
             <button
               key={t}
@@ -148,7 +147,7 @@ export default function DetallePlanta() {
         )}
 
         {tab === "Notas" && (
-          <p className="mt-6 rounded-2xl bg-white p-4 text-sm text-malp-negro/70 shadow-tarjeta">
+          <p className="mt-6 rounded-tarjeta border border-malp-borde bg-malp-papel p-4 text-sm text-malp-negro/70 shadow-tarjeta">
             {planta.nota ??
               `Aun no hay notas para ${planta.nombre}. Aca podras anotar lo que quieras recordar: donde la ubicaste, como reacciona al sol, etc.`}
           </p>
@@ -210,7 +209,7 @@ function Cuidado({
   valor: string;
 }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-tarjeta">
+    <div className="flex items-center gap-3 rounded-2xl border border-malp-borde bg-malp-papel p-3 shadow-tarjeta">
       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-malp-crema text-malp-verde-osc">
         <Icon size={18} />
       </span>

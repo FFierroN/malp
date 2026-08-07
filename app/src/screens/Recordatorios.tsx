@@ -58,10 +58,9 @@ export default function Recordatorios() {
                       <button
                         key={r.id}
                         onClick={() => navigate(`/plantoteca/${planta.id}`)}
-                        className="flex w-full items-center gap-3 rounded-3xl bg-white p-3 text-left shadow-tarjeta transition active:scale-[0.99]"
+                        className="flex w-full items-center gap-3 rounded-tarjeta border border-malp-borde bg-malp-papel p-3 text-left shadow-tarjeta transition duration-300 active:scale-[0.99]"
                       >
                         <PlantPoster
-                          gradiente={planta.gradiente}
                           foto={planta.foto}
                           className="h-14 w-14 shrink-0 rounded-2xl"
                           size={24}

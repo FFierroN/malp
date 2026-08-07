@@ -22,8 +22,8 @@ export default defineConfig({
         short_name: "MALP",
         description:
           "Organiza tu coleccion de plantas y accede al Club de Descuentos Manos a la Planta.",
-        theme_color: "#1F6B3A",
-        background_color: "#F8F7F2",
+        theme_color: "#3E5C46",
+        background_color: "#F7F4EE",
         display: "standalone",
         start_url: "/malp/",
         scope: "/malp/",

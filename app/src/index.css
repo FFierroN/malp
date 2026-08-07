@@ -9,7 +9,7 @@
 body {
   margin: 0;
   font-family: theme("fontFamily.cuerpo");
-  background-color: #dedcd4;
+  background-color: #ded7c8;
   color: theme("colors.malp.negro");
   -webkit-font-smoothing: antialiased;
 }
@@ -20,4 +20,20 @@ body {
 }
 .scroll-limpio::-webkit-scrollbar {
   display: none;
+}
+
+/* Textura de "papel reciclado": ruido muy sutil, nada llamativo. Se usa en
+   tarjetas y fondos para que se sientan con un poco de fibra, no lisos. */
+.textura-papel {
+  background-image: radial-gradient(
+      rgba(58, 54, 47, 0.03) 1px,
+      transparent 1px
+    ),
+    radial-gradient(rgba(58, 54, 47, 0.025) 1px, transparent 1px);
+  background-size:
+    3px 3px,
+    7px 7px;
+  background-position:
+    0 0,
+    1.5px 1.5px;
 }

@@ -12,7 +12,6 @@ export interface Planta {
   especie: string; // nombre botanico (ej. "Monstera deliciosa")
   categoria: Categoria;
   emoji: string; // placeholder visual mientras no hay fotos reales
-  gradiente: string; // clases tailwind para el "poster" de la planta
   foto?: string; // ruta a la foto real en public/plantas/ (opcional)
   ultimoRiego: string; // texto humano (ej. "Hace 5 dias")
   proximoRiego: string; // texto humano (ej. "En 3 dias")
@@ -86,7 +85,6 @@ export const plantas: Planta[] = [
     especie: "Monstera deliciosa",
     categoria: "Interior",
     emoji: "",
-    gradiente: "from-emerald-700 to-emerald-500",
     foto: foto("margarita.jpg"),
     ultimoRiego: "Hace 5 dias",
     proximoRiego: "En 3 dias",
@@ -107,7 +105,6 @@ export const plantas: Planta[] = [
     especie: "Philodendron hederaceum",
     categoria: "Interior",
     emoji: "",
-    gradiente: "from-green-800 to-lime-600",
     foto: foto("luna.jpg"),
     ultimoRiego: "Hace 2 dias",
     proximoRiego: "En 3 dias",
@@ -124,7 +121,6 @@ export const plantas: Planta[] = [
     especie: "Calathea orbifolia",
     categoria: "Interior",
     emoji: "",
-    gradiente: "from-teal-800 to-emerald-600",
     foto: foto("selva.jpg"),
     ultimoRiego: "Hace 7 dias",
     proximoRiego: "En 1 dia",

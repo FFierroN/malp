@@ -12,7 +12,7 @@ const items = [
 export default function BottomNav() {
   const navigate = useNavigate();
   return (
-    <nav className="relative border-t border-black/5 bg-white/95 px-2 pb-6 pt-2 backdrop-blur">
+    <nav className="relative border-t border-malp-borde bg-malp-papel/95 px-2 pb-6 pt-2 backdrop-blur transition">
       <div className="flex items-end justify-around">
         {items.slice(0, 2).map((it) => (
           <ItemNav key={it.to} {...it} />
@@ -23,7 +23,7 @@ export default function BottomNav() {
           type="button"
           onClick={() => navigate("/monstera")}
           aria-label="Mi Monstera"
-          className="-mt-8 flex h-16 w-16 items-center justify-center rounded-full bg-malp-verde text-white shadow-lg ring-4 ring-white transition active:scale-95"
+          className="-mt-8 flex h-16 w-16 items-center justify-center rounded-full bg-malp-verde-osc text-white shadow-tarjeta ring-4 ring-malp-papel transition duration-300 active:scale-95"
         >
           <Hoja size={30} />
         </button>

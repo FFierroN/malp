@@ -43,7 +43,7 @@ export default function Plantoteca() {
 
       <Pantalla>
         {/* Buscador */}
-        <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2.5 shadow-tarjeta">
+        <div className="flex items-center gap-2 rounded-full border border-malp-borde bg-malp-papel px-4 py-2.5 shadow-tarjeta">
           <Search size={18} className="text-malp-negro/40" />
           <input
             value={busqueda}
@@ -68,10 +68,9 @@ export default function Plantoteca() {
             <button
               key={p.id}
               onClick={() => navigate(`/plantoteca/${p.id}`)}
-              className="flex w-full items-center gap-3 rounded-3xl bg-white p-3 text-left shadow-tarjeta transition active:scale-[0.99]"
+              className="flex w-full items-center gap-3 rounded-tarjeta border border-malp-borde bg-malp-papel p-3 text-left shadow-tarjeta transition duration-300 active:scale-[0.99]"
             >
               <PlantPoster
-                gradiente={p.gradiente}
                 foto={p.foto}
                 className="h-20 w-20 shrink-0 rounded-2xl"
                 size={34}

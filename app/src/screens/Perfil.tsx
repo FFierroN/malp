@@ -25,7 +25,7 @@ export default function Perfil() {
       <Pantalla>
         {/* Cabecera de usuario */}
         <div className="flex flex-col items-center">
-          <div className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-emerald-700 to-emerald-500 text-white shadow-tarjeta">
+          <div className="flex h-24 w-24 items-center justify-center rounded-full bg-malp-madera text-malp-verde-osc shadow-tarjeta">
             <Hoja size={48} />
           </div>
           <h2 className="mt-3 font-titulo text-2xl text-malp-verde-osc">
@@ -83,7 +83,7 @@ export default function Perfil() {
             return (
               <div
                 key={b.titulo}
-                className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-tarjeta"
+                className="flex items-center gap-3 rounded-2xl border border-malp-borde bg-malp-papel p-3 shadow-tarjeta"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-malp-crema text-malp-verde-osc">
                   <Icon size={18} />

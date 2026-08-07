@@ -27,28 +27,28 @@ export default function Identificar() {
         </p>
 
         {/* Circulo de "camara" (placeholder) */}
-        <div className="mx-auto mt-8 flex h-64 w-64 items-center justify-center rounded-full bg-gradient-to-br from-emerald-800 to-emerald-500 shadow-tarjeta">
-          <Hoja size={90} className="text-white/85" />
+        <div className="mx-auto mt-8 flex h-64 w-64 items-center justify-center rounded-full bg-malp-madera shadow-tarjeta">
+          <Hoja size={90} className="text-malp-verde-osc/60" />
         </div>
 
         {/* Controles de camara */}
         <div className="mt-8 flex items-center justify-center gap-8">
           <button
             aria-label="Galeria"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-malp-verde-osc shadow-tarjeta"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-malp-papel text-malp-verde-osc shadow-tarjeta transition duration-300 active:scale-95"
           >
             <ImageIcon size={22} />
           </button>
           <button
             aria-label="Tomar foto"
             onClick={() => navigate("/identificar/resultado")}
-            className="flex h-20 w-20 items-center justify-center rounded-full bg-malp-verde text-white shadow-lg ring-4 ring-white transition active:scale-95"
+            className="flex h-20 w-20 items-center justify-center rounded-full bg-malp-verde-osc text-malp-papel shadow-tarjeta ring-4 ring-malp-papel transition duration-300 active:scale-95"
           >
             <Camera size={34} />
           </button>
           <button
             aria-label="Cambiar camara"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-malp-verde-osc shadow-tarjeta"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-malp-papel text-malp-verde-osc shadow-tarjeta transition duration-300 active:scale-95"
           >
             <RefreshCw size={22} />
           </button>

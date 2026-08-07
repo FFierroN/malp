@@ -62,11 +62,10 @@ export default function Recompensas() {
             return (
               <div
                 key={r.id}
-                className="overflow-hidden rounded-3xl bg-white shadow-tarjeta"
+                className="overflow-hidden rounded-tarjeta border border-malp-borde bg-malp-papel shadow-tarjeta"
               >
                 <div className="relative">
                   <PlantPoster
-                    gradiente="from-emerald-700 to-emerald-500"
                     className="h-28 w-full"
                     size={40}
                   />

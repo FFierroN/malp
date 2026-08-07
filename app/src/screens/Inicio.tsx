@@ -16,9 +16,9 @@ export default function Inicio() {
   return (
     <>
       <StatusBar />
-      <Pantalla className="pt-2">
+      <Pantalla className="pt-2 pb-10">
         {/* Encabezado */}
-        <header className="flex items-center justify-between py-3">
+        <header className="flex items-center justify-between py-4">
           <button aria-label="Menu" className="text-malp-verde-osc">
             <Menu size={26} />
           </button>
@@ -31,18 +31,18 @@ export default function Inicio() {
         </header>
 
         {/* Saludo */}
-        <h1 className="mt-2 font-titulo text-3xl text-malp-verde-osc">
+        <h1 className="mt-3 font-titulo text-3xl text-malp-verde-osc">
           Hola, {usuario.nombre}!
         </h1>
-        <p className="mt-1 text-sm text-malp-negro/60">
+        <p className="mt-1.5 text-sm text-malp-negro/50">
           Gracias por ser parte de nuestra jungla
         </p>
-        <p className="mt-0.5 text-xs font-bold text-malp-verde">
+        <p className="mt-1 text-xs font-semibold text-malp-verde-osc">
           Socia desde {usuario.miembroDesde}
         </p>
 
         {/* Tarjeta de puntos */}
-        <Card className="mt-5">
+        <Card className="mt-7">
           <p className="text-sm font-bold text-malp-negro/50">Tus puntos</p>
           <div className="mt-1 flex items-baseline gap-2">
             <span className="font-titulo text-5xl text-malp-verde-osc">
@@ -60,19 +60,19 @@ export default function Inicio() {
           </p>
           <button
             onClick={() => navigate("/monstera")}
-            className="mt-4 w-full rounded-full bg-malp-verde-osc py-3 text-sm font-bold text-white transition active:scale-[0.98]"
+            className="mt-5 w-full rounded-boton bg-malp-verde-osc py-3 text-sm font-semibold text-malp-papel transition duration-300 active:scale-[0.98]"
           >
             Ver mi Monstera
           </button>
         </Card>
 
         {/* Accesos rapidos */}
-        <div className="mt-5 grid grid-cols-4 gap-2">
+        <div className="mt-8 grid grid-cols-4 gap-3">
           {accesos.map(({ label, icon: Icon, to }) => (
             <button
               key={label}
               onClick={() => navigate(to)}
-              className="flex flex-col items-center gap-2 rounded-2xl bg-white/70 py-3 text-center text-[10px] font-bold text-malp-negro/70 transition active:scale-95"
+              className="flex flex-col items-center gap-2 rounded-2xl border border-malp-borde bg-malp-papel py-3 text-center text-[10px] font-semibold text-malp-negro/60 transition duration-300 active:scale-95"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-malp-crema text-malp-verde-osc">
                 <Icon size={20} />
@@ -83,9 +83,9 @@ export default function Inicio() {
         </div>
 
         {/* Ultima interaccion */}
-        <Card className="mt-5 flex items-center gap-4 !p-3">
-          <div className="flex h-16 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-700 to-emerald-500">
-            <Hoja size={28} className="text-white/85" />
+        <Card className="mt-6 flex items-center gap-4 !p-3">
+          <div className="flex h-16 w-20 shrink-0 items-center justify-center rounded-2xl bg-malp-madera">
+            <Hoja size={28} className="text-malp-verde-osc/70" />
           </div>
           <div>
             <p className="text-xs font-bold text-malp-negro/50">
