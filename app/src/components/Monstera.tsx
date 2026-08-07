@@ -32,9 +32,9 @@ const POSICIONES: PosicionHoja[] = [
   { x: 130, y: 52, rotate: 0, size: 50 },
 ];
 
-const COLOR_LOGRADA = "#3E5C46";
-const COLOR_SIGUIENTE = "#8FA888";
-const COLOR_FUTURA = "#3A362F";
+const COLOR_LOGRADA = "#1F6B3A";
+const COLOR_SIGUIENTE = "#8BC34A";
+const COLOR_FUTURA = "#2F3A32";
 
 export function MonsteraCrecimiento({
   puntos,
@@ -90,9 +90,9 @@ export function MonsteraCrecimiento({
         );
       })}
 
-      {/* Maceta de ceramica (terracota, plana, sin degradado) */}
-      <path d="M85 360 L175 360 L165 400 L95 400 Z" fill="#C97F5C" />
-      <ellipse cx="130" cy="360" rx="45" ry="9" fill="#B96A47" />
+      {/* Maceta de mimbre/ceramica (tono calido, plano, sin degradado) */}
+      <path d="M85 360 L175 360 L165 400 L95 400 Z" fill="#B98D5D" />
+      <ellipse cx="130" cy="360" rx="45" ry="9" fill="#A67A4A" />
       <ellipse cx="130" cy="358" rx="38" ry="6" fill="#6b5744" opacity="0.5" />
     </svg>
   );

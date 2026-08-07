@@ -4,22 +4,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Paleta "papel reciclado + madera clara + ceramica" (2026-08-07).
-        // Inspirada en Apple Health / Notion / Gentler Streak: calma, plana,
-        // sin degradados llamativos ni colores saturados. Se mantienen los
-        // nombres de tokens usados en las pantallas para no reescribir todo.
+        // Paleta "verde bosque + lima + crema" (2026-08-08), siguiendo los
+        // mockups reales de Felipe (nav inferior verde solido, hitos dorados,
+        // tarjetas blancas sobre fondo crema).
         malp: {
-          verde: "#8FA888", // accent suave (progreso, activos, iconos)
-          "verde-osc": "#3E5C46", // primary apagado (titulos, botones)
-          "verde-hoja": "#4F6B52",
-          amarillo: "#C97F5C", // terracota (antes lima, se reusa el token)
-          lima: "#C97F5C",
-          madera: "#E4D9C8", // madera clara (placeholder de fotos)
+          verde: "#8BC34A", // lima/accent (iconos chicos, progreso)
+          "verde-osc": "#1F6B3A", // primary (nav, botones, titulos)
+          "verde-hoja": "#2E7D4F",
+          amarillo: "#D9A441", // dorado (hitos logrados, destacados)
+          lima: "#9ACD32",
+          madera: "#E8DFCE", // placeholder de foto cuando no hay imagen
           "madera-osc": "#C9B79C",
-          crema: "#F7F4EE", // fondo general (papel)
-          papel: "#FBFAF6", // superficie de tarjetas (mas clara que el fondo)
-          negro: "#3A362F", // texto principal (marron calido, no negro puro)
-          borde: "#E6E1D6", // bordes/lineas sutiles
+          crema: "#F8F7F2", // fondo general
+          papel: "#FFFFFF", // superficie de tarjetas
+          negro: "#2F3A32", // texto principal
+          borde: "#E6E4DD", // bordes/lineas sutiles
         },
       },
       fontFamily: {
@@ -28,16 +27,14 @@ export default {
         logo: ["'Caveat'", "cursive"],
       },
       borderRadius: {
-        // esquinas muy redondeadas, estilo tarjeta de papel grueso.
-        tarjeta: "28px",
-        boton: "22px",
-        imagen: "24px",
+        tarjeta: "24px",
+        boton: "999px",
+        imagen: "20px",
       },
       boxShadow: {
-        // sombras neutras y difusas (nada de tinte verde saturado).
-        tarjeta: "0 12px 28px -16px rgba(58, 54, 47, 0.16)",
-        suave: "0 4px 14px -6px rgba(58, 54, 47, 0.12)",
-        celu: "0 30px 60px -20px rgba(58, 54, 47, 0.30)",
+        tarjeta: "0 10px 24px -14px rgba(31, 107, 58, 0.18)",
+        suave: "0 4px 14px -6px rgba(47, 58, 50, 0.10)",
+        celu: "0 30px 60px -20px rgba(47, 58, 50, 0.32)",
       },
       transitionDuration: {
         DEFAULT: "300ms",

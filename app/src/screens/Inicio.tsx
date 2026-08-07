@@ -83,10 +83,7 @@ export default function Inicio() {
         </div>
 
         {/* Ultima interaccion */}
-        <Card className="mt-6 flex items-center gap-4 !p-3">
-          <div className="flex h-16 w-20 shrink-0 items-center justify-center rounded-2xl bg-malp-madera">
-            <Hoja size={28} className="text-malp-verde-osc/70" />
-          </div>
+        <Card className="mt-6 flex items-center justify-between gap-4 !p-3">
           <div>
             <p className="text-xs font-bold text-malp-negro/50">
               Ultima interaccion
@@ -97,6 +94,9 @@ export default function Inicio() {
             <p className="text-xs text-malp-negro/60">
               {usuario.ultimaInteraccion.detalle}
             </p>
+          </div>
+          <div className="flex h-16 w-20 shrink-0 items-center justify-center rounded-2xl bg-malp-madera">
+            <Hoja size={28} className="text-malp-verde-osc/70" />
           </div>
         </Card>
       </Pantalla>

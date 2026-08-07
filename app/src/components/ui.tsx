@@ -3,24 +3,22 @@ import { Signal, Wifi, BatteryFull } from "lucide-react";
 
 // --- Barra de estado del "celular" (9:41, señal, wifi, bateria) ----------
 export function StatusBar({ oscura = false }: { oscura?: boolean }) {
-  const color = oscura ? "text-white" : "text-malp-negro/70";
+  const color = oscura ? "text-white" : "text-malp-negro";
   return (
     <div
-      className={`flex items-center justify-between px-6 pt-3 text-xs font-semibold ${color}`}
+      className={`flex items-center justify-between px-6 pt-3 text-xs font-bold ${color}`}
     >
       <span>9:41</span>
       <div className="flex items-center gap-1.5">
-        <Signal size={14} strokeWidth={2.2} />
-        <Wifi size={14} strokeWidth={2.2} />
-        <BatteryFull size={16} strokeWidth={2.2} />
+        <Signal size={14} strokeWidth={2.5} />
+        <Wifi size={14} strokeWidth={2.5} />
+        <BatteryFull size={16} strokeWidth={2.5} />
       </div>
     </div>
   );
 }
 
-// --- Tarjeta "de papel" reutilizable --------------------------------------
-// Superficie clara, esquinas muy redondeadas, sombra difusa y neutra, con
-// una textura de papel apenas perceptible (nada llamativo).
+// --- Tarjeta blanca reutilizable, plana y limpia --------------------------
 export function Card({
   children,
   className = "",
@@ -30,7 +28,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`textura-papel rounded-tarjeta border border-malp-borde bg-malp-papel p-5 shadow-tarjeta transition ${className}`}
+      className={`rounded-tarjeta bg-malp-papel p-5 shadow-tarjeta transition ${className}`}
     >
       {children}
     </div>
@@ -51,10 +49,10 @@ export function Chip({
     <button
       type="button"
       onClick={onClick}
-      className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-semibold transition ${
+      className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-bold transition ${
         activo
-          ? "bg-malp-verde-osc text-malp-papel"
-          : "border border-malp-borde bg-malp-papel text-malp-negro/60"
+          ? "bg-malp-verde-osc text-white"
+          : "bg-malp-papel text-malp-negro/60 ring-1 ring-malp-borde"
       }`}
     >
       {children}
@@ -62,11 +60,11 @@ export function Chip({
   );
 }
 
-// --- Barra de progreso de puntos (plana, sin degradado) -------------------
+// --- Barra de progreso de puntos (solida, sin degradado) ------------------
 export function ProgressBar({ valor, max }: { valor: number; max: number }) {
   const pct = Math.min(100, Math.round((valor / max) * 100));
   return (
-    <div className="h-2 w-full overflow-hidden rounded-full bg-malp-borde">
+    <div className="h-2.5 w-full overflow-hidden rounded-full bg-malp-crema">
       <div
         className="h-full rounded-full bg-malp-verde-osc transition-all duration-500"
         style={{ width: `${pct}%` }}
@@ -76,8 +74,6 @@ export function ProgressBar({ valor, max }: { valor: number; max: number }) {
 }
 
 // --- "Poster" de planta: foto real si existe; si no, madera clara + hoja --
-// Antes usaba degradados verdes llamativos; ahora, siguiendo la direccion
-// de arte (calma, madera clara, ceramica), el placeholder es plano.
 export function PlantPoster({
   foto,
   className = "",
@@ -107,9 +103,9 @@ export function PlantPoster({
   );
 }
 
-// --- Logo de marca -------------------------------------------------------
-// Usa la imagen real en public/logo.svg (o .png) cuando exista. Mientras
-// tanto cae en la recreacion SVG de las dos hojas (bosque + terracota).
+// --- Logo de marca ---------------------------------------------------------
+// Usa la imagen real en public/logo.png (o .svg) cuando exista. Mientras
+// tanto cae en la recreacion SVG de las dos hojas (bosque + lima).
 export function Logo({
   size = 32,
   conTexto = false,
@@ -124,7 +120,7 @@ export function Logo({
         <LogoFallback size={size} />
       ) : (
         <img
-          src={`${import.meta.env.BASE_URL}logo.svg`}
+          src={`${import.meta.env.BASE_URL}logo.png`}
           alt="Manos a la Planta"
           width={size * 1.2}
           height={size}
@@ -141,19 +137,19 @@ export function Logo({
   );
 }
 
-// Recreacion SVG del logo (dos hojas), usada solo si logo.svg no existe.
+// Recreacion SVG del logo (dos hojas), usada solo si logo.png no existe.
 function LogoFallback({ size }: { size: number }) {
   return (
     <svg viewBox="0 0 48 40" width={size * 1.2} height={size} aria-label="Manos a la Planta">
       <g transform="translate(2 2)">
         <path
-          fill="#3E5C46"
+          fill="#1F6B3A"
           d="M14 34C4 30 0 20 3 10 5 3 12 0 20 0c9 0 14 6 14 15 0 11-9 20-20 19Zm3-5c6-1 11-7 11-14 0-4-2-7-6-8 1 3 0 6-2 8-1-2-1-4-3-5 1 4-1 7-4 8 2 0 3 1 3 3-2 0-4 0-5 2 2 1 4 2 6 1Z"
         />
       </g>
       <g transform="translate(26 12) scale(0.62)">
         <path
-          fill="#C97F5C"
+          fill="#9ACD32"
           d="M14 34C4 30 0 20 3 10 5 3 12 0 20 0c9 0 14 6 14 15 0 11-9 20-20 19Z"
         />
       </g>
