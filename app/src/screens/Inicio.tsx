@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Menu, Bell, Library, ScanLine, BellRing, Star } from "lucide-react";
+import { Library, ScanLine, BellRing, Star } from "lucide-react";
 import { StatusBar, Card, ProgressBar, Hoja, Logo } from "@/components/ui";
 import { Pantalla } from "@/components/Layout";
 import { usuario, puntosFaltantes } from "@/data/mock";
@@ -17,17 +17,9 @@ export default function Inicio() {
     <>
       <StatusBar />
       <Pantalla className="pt-2 pb-10">
-        {/* Encabezado */}
-        <header className="flex items-center justify-between py-4">
-          <button aria-label="Menu" className="text-malp-verde-osc">
-            <Menu size={26} />
-          </button>
-          <div className="flex items-center gap-2 text-malp-verde-osc">
-            <Logo size={26} conTexto />
-          </div>
-          <button aria-label="Notificaciones" className="text-malp-verde-osc">
-            <Bell size={24} />
-          </button>
+        {/* Encabezado: logo centrado, sin menu ni campana */}
+        <header className="flex items-center justify-center py-4">
+          <Logo size={34} conTexto />
         </header>
 
         {/* Saludo */}
@@ -36,9 +28,6 @@ export default function Inicio() {
         </h1>
         <p className="mt-1.5 text-sm text-malp-negro/50">
           Gracias por ser parte de nuestra jungla
-        </p>
-        <p className="mt-1 text-xs font-semibold text-malp-verde-osc">
-          Socia desde {usuario.miembroDesde}
         </p>
 
         {/* Tarjeta de puntos */}
